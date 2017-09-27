@@ -1,4 +1,5 @@
 body {
+  background-color: #FFFAFA;
   font-family: arial;
   margin: auto 10%;
 }
@@ -6,6 +7,35 @@ body {
 h3 {
   margin-left: 50px;
 }
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#modalWindow {
+  background-color: white;
+  width: 400px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%); }
+  #modalWindow img {
+    border-radius: 50%;
+    margin-top: 30px; }
+
 
 #searchText {
   width: 20%;
@@ -25,7 +55,22 @@ h3 {
   font-size: 16px;
 }
 
+#close {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 30px 64px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .employee {
+  background-color: white;
   font-size: 14px;
   width: 30%;
   margin: 1% 1%;

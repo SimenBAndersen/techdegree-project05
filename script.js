@@ -2,6 +2,8 @@
 
   let employees = [];
   let htmlOutput = "<ul>";
+  let overlayOutput;
+  let button = "<button type='button' id='close'>X</button>";
 
   $.ajax({
     url: 'https://randomuser.me/api/?results=12&nat=gb',
@@ -30,7 +32,7 @@
 
       for (let i = 0; i < employees.length; i++) {
 
-        htmlOutput += "<div class='employee'>" +
+        htmlOutput += "<div class='employee' data-index=" + i + ">" +
         "<img src=" + employees[i].img + ">" +
         "<div class='name'>" + employees[i].firstname + " " +
         employees[i].lastname + "</div>" +
@@ -42,6 +44,32 @@
       htmlOutput += "</ul>";
 
       $("#employees").html(htmlOutput);
+
+      $(".employee").click(function(event) {
+        $("#overlay").css("display", "block");
+
+        let index = event.currentTarget.dataset.index;
+
+        overlayOutput = "<img src=" + employees[index].img + ">" +
+        "<div class='name'>" + employees[index].firstname + " " +
+        employees[index].lastname + "</div>" +
+        "<div class='username'>" + employees[index].username + "</div></br>" +
+        "<div class='email'>" + employees[index].email + "</div>" +
+        "<div class='city'>" + employees[index].city + "</div></br>" +
+        "</br><div class='phone'>" + employees[index].phone + "</div>" +
+        "<div class='street'>" + employees[index].street + "</div>" +
+        "<div class='state'>" + employees[index].state + "</div>" +
+        "<div class='postcode'>" + employees[index].postcode + "</div></br>" +
+        "<div class='birthdate'>" + employees[index].birthdate + "</div>";
+
+        $("#modalWindow").append(overlayOutput);
+
+      });
+
+      $("#close").click(function() {
+        $("#overlay").css("display", "none");
+        $("#modalWindow").html("");
+      });
 
     }
   });
