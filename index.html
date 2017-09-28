@@ -8,11 +8,17 @@
   <body>
     <h3>EMPLOYEE DIRECTORY FOR AWESOME STARTUP</h3>
     <div>
-      <input type="text" id="searchText" placeholder="Search for an employee">
-      <button type="button" id="searchButton">Search</button>
+      <form>
+        <input type="text" id="searchText" placeholder="Search for an employee">
+        <input type="submit" id="submitButton" value="Search">
+      </form>
     </div>
     <div id="employees"></div>
     <div id="overlay">
+      <div class="prevNext">
+        <button type="button" id="prev">Prev</button>
+        <button type="button" id="next">Next</button>
+      </div>
       <button type="button" id="close">X</button>
       <div id="modalWindow"></div>
     </div>

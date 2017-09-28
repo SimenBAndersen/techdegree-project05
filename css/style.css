@@ -43,7 +43,7 @@ h3 {
   padding: 15px 32px;
 }
 
-#searchButton {
+#submitButton {
   background-color: #4CAF50;
   margin-top: 3px;
   border: none;
@@ -55,8 +55,11 @@ h3 {
   font-size: 16px;
 }
 
-#close {
-  background-color: #4CAF50;
+.prevNext {
+  width: 400px;
+}
+
+#close, #next, #prev {
   border: none;
   color: white;
   padding: 30px 64px;
@@ -64,9 +67,23 @@ h3 {
   text-decoration: none;
   display: inline-block;
   font-size: 32px;
-  position: absolute;
+}
+
+#close {
+  background-color: #f44336;
   top: 0;
   right: 0;
+  position: absolute;
+}
+
+#next {
+  float: right;
+  background-color: #4CAF50;
+}
+
+#prev {
+  float: left;
+  background-color: #008CBA;
 }
 
 .employee {
